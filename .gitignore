@@ -1,0 +1,7 @@
+__pycache__
+venv
+db.sqlite
+notes-todo.js
+user.py
+.vscode
+.DS_Store
