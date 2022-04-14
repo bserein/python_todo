@@ -1,14 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" type="text/css" media="screen" href="style.css" />
+    <link rel="stylesheet" type="text/css" href="../static/basic.css" media="screen" />
     <title>Todo App</title>
 </head>
 <body>
-    <h1 style="text-align: center">Todo App</h1>
+    <h1>Todo App</h1>
     <form action="/add" method="post">
         <div>
         <div>
@@ -18,16 +15,15 @@
             <button type="submit">Add</button>
         </div>
     </form>
-    <table>
+    <table >
         <tr>
             <th>ID</th>
             <th>Task</th>
-            <th>Task-Status</th>
-            <th>Date_Created</th>
-            <th>Due_Date</th>
-            <th>Action</th>
             <th>Status</th>
-        </tr>
+            <th>Date Created</th>
+            <th>Due Date</th>
+            <th>Action</th>
+        </tr >
         {% for todo in todo_list %}
             <tr>
                 <td>{{ todo.id }}</td>
@@ -43,7 +39,7 @@
                 <td>date-created</td>
                 <td>date-it-is-due</td>
                 <td>  <a href="/delete/{{ todo.id }}">Delete</a> </td>
-                <td>  <a href="/update/{{ todo.id }}">Status</a>  </td>
+                <td>  <a href="/update/{{ todo.id }}">Mark Complete</a>  </td>
             </tr>
         {% endfor %}
     </table>

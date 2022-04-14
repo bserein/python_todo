@@ -1,0 +1,27 @@
+h1 {
+    text-align: center;
+    color: blue;
+}
+
+table {
+    width: 900px;
+    text-align: left;
+    border-spacing: 40px
+}
+
+table, th, td {
+    border: 1px solid black;
+    border-collapse: collapse;
+}
+th, td {
+    padding: 10px;
+}
+
+tr:nth-child(even) {
+    background-color: #dddddd;
+}
+
+tr:nth-child(odd) {
+    background-color: #fff;
+}
+
