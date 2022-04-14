@@ -1,6 +1,6 @@
 h1 {
     text-align: center;
-    color: blue;
+    color: whitesmoke;
 }
 
 table {
@@ -8,10 +8,14 @@ table {
     text-align: left;
     border-spacing: 40px
 }
+label {
+    color: white;
+}
 
 table, th, td {
     border: 1px solid black;
     border-collapse: collapse;
+    /* opacity: 85%; */
 }
 th, td {
     padding: 10px;
@@ -25,3 +29,11 @@ tr:nth-child(odd) {
     background-color: #fff;
 }
 
+body {
+    background: linear-gradient(
+      90deg,
+      rgba(48, 16, 255, 1) 0%,
+      rgb(100, 255, 216) 100%
+    );
+  }
+  

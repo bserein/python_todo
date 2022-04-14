@@ -1,5 +1,6 @@
 from flask import Flask, render_template, request, redirect, url_for
 from flask_sqlalchemy import SQLAlchemy 
+from datetime import *
 
 app = Flask(__name__)
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///db.sqlite'
@@ -11,6 +12,8 @@ class Todo(db.Model):
     id = db.Column(db.Integer, primary_key=True) 
     title = db.Column(db.String(200), nullable=False) 
     complete = db.Column(db.Boolean) 
+    # due_date = db.Column(db.DateTime, nullable=False, default=datetime.utcnow)
+    # date_created = db.Column(db.DateTime, default=datetime.utcnow)
 
 @app.route('/') 
 def index(): 
@@ -21,6 +24,10 @@ def index():
 def add():
     
     title = request.form.get('title') 
+    # title_due_date = request.form['due_date']
+    # datetime_object = datetime.fromisoformat(title_due_date)
+    # print(datetime_object)
+    # new_todo = Todo(title=title, due_date=datetime_object, complete=False)
     new_todo = Todo(title=title, complete=False) 
     db.session.add(new_todo) 
     db.session.commit() 

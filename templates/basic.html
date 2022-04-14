@@ -2,20 +2,27 @@
 <html lang="en">
 <head>
     <link rel="stylesheet" type="text/css" href="../static/basic.css" media="screen" />
-    <title>Todo App</title>
+    <title>Brian's Todo App</title>
 </head>
 <body>
-    <h1>Todo App</h1>
+    <h1>Todozilla</h1>
     <form action="/add" method="post">
         <div>
-        <div>
-            <label for="title">New Todo</label>
+        <div class="add-task">
+            <label for="title">New Task</label>
             <input type="text" name="title" placeholder="Enter Task"></input>
-            
+            <input
+                 type="date"
+                 id="due_date"
+                 name="due_date"
+                 value="2022-01-01"
+                 min="2022-01-01"
+                 max="2028-12-31"
+            />
             <button type="submit">Add</button>
         </div>
     </form>
-    <table >
+    <table class="todo-table">
         <tr>
             <th>ID</th>
             <th>Task</th>
@@ -25,7 +32,7 @@
             <th>Action</th>
         </tr >
         {% for todo in todo_list %}
-            <tr>
+        <tr>
                 <td>{{ todo.id }}</td>
                 <td>{{ todo.title }}</td>
                 <!-- <td>{{ todo.due_date }}</td>
@@ -38,9 +45,9 @@
                 
                 <td>date-created</td>
                 <td>date-it-is-due</td>
-                <td>  <a href="/delete/{{ todo.id }}">Delete</a> </td>
+                <td>  <a href="/delete/{{ todo.id }}">Delete</a>         </td>
                 <td>  <a href="/update/{{ todo.id }}">Mark Complete</a>  </td>
-            </tr>
+        </tr>
         {% endfor %}
     </table>
 </div>
