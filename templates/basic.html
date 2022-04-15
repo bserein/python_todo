@@ -2,11 +2,12 @@
 <html lang="en">
 <head>
     <link rel="stylesheet" type="text/css" href="../static/basic.css" media="screen" />
+    <link rel="icon" href="../static/reminder.ico">
     <title>Brian's Todo App</title>
 </head>
 <body>
     <h1>Todozilla</h1>
-    <form action="/add" method="post">
+    <form action="/todo/add" method="post">
         <div>
         <div class="add-task">
             <label for="title">New Task</label>
@@ -45,8 +46,10 @@
                 
                 <td>date-created</td>
                 <td>date-it-is-due</td>
-                <td>  <a href="/delete/{{ todo.id }}">Delete</a>         </td>
-                <td>  <a href="/update/{{ todo.id }}">Mark Complete</a>  </td>
+                <td>  
+                      <a href="">Edit</a>     ||                         
+                      <a href="/todo/delete/{{ todo.id }}">Delete</a>         </td>
+                <td>  <a href="/todo/update/{{ todo.id }}">Mark Complete</a>  </td>
         </tr>
         {% endfor %}
     </table>
