@@ -11,7 +11,7 @@
         <div>
         <div class="add-task">
             <label for="title">New Task</label>
-            <input type="text" name="title" placeholder="Enter Task"></input>
+            <input type="text" name="title" placeholder="Enter Task" style="width: 400px;"></input>
             <input
                  type="date"
                  id="due_date"
@@ -20,20 +20,21 @@
                  min="2022-01-01"
                  max="2028-12-31"
             />
-            <button type="submit">Add</button>
+            <button type="submit" class="button" href="#">Add</button>
         </div>
     </form>
-    <table class="todo-table">
-        <tr>
-            <th>ID</th>
-            <th>Task</th>
-            <th>Status</th>
-            <th>Date Created</th>
-            <th>Due Date</th>
-            <th>Action</th>
-        </tr >
-        {% for todo in todo_list %}
-        <tr>
+        <div >
+        <table class="todo-table">
+            <tr>
+                <th>ID</th>
+                <th>Task</th>
+                <th>Status</th>
+                <th>Date Created</th>
+                <th>Due Date</th>
+                <th>Action</th>
+            </tr >
+            {% for todo in todo_list %}
+            <tr>
                 <td>{{ todo.id }}</td>
                 <td>{{ todo.title }}</td>
                 <!-- <td>{{ todo.due_date }}</td>
@@ -50,9 +51,10 @@
                       <a href="">Edit</a>     ||                         
                       <a href="/todo/delete/{{ todo.id }}">Delete</a>         </td>
                 <td>  <a href="/todo/update/{{ todo.id }}">Mark Complete</a>  </td>
-        </tr>
-        {% endfor %}
-    </table>
+            </tr>
+            {% endfor %}
+        </table>
+        </div>
 </div>
 
 
